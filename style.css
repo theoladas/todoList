@@ -4,5 +4,35 @@
   box-sizing: border-box;
 }
 body {
+  background: linear-gradient(120deg, #e1bb3e, #e47a5d);
   font-family: "Poppins", sans-serif;
+  color: #ffff;
+  min-height: 100vh;
+}
+header {
+  font-size: 1.8rem;
+}
+header,
+form {
+  min-height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+form input,
+form button {
+  padding: 0.5rem;
+  font-size: 1.4rem;
+  border: none;
+  background: white;
+}
+form button {
+  color: #e47a5d;
+  background: white;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+form button:hover {
+  color: white;
+  background: #e47a5d;
 }
