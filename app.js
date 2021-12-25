@@ -16,7 +16,7 @@ function addTodo(e) {
   const completeTodoButton = document.createElement("button");
   completeTodoButton.innerHTML = '<i class="fas fa-check-square"></i>';
   completeTodoButton.classList.add("completeButton");
-  newTodoContainer.append(deleteTodoButton, completeTodoButton);
+  newTodoContainer.append(completeTodoButton, deleteTodoButton);
   let userInputText = userInput.value;
   newTodo.innerText = userInputText;
   todoList.append(newTodoContainer);
