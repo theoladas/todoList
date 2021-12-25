@@ -22,13 +22,20 @@ function addTodo(e) {
   todoList.append(newTodoContainer);
   userInput.value = "";
 }
-function deleteTodo(e) {
+function deleteCheckedTodo(e) {
   const item = e.target;
   if (item.classList[0] === "deleteButton") {
     const newTodoLi = item.parentElement;
-    newTodoLi.remove();
+    newTodoLi.classList.add("fallEffectTodo");
+    newTodoLi.addEventListener("transitionend", function () {
+      newTodoLi.remove();
+    });
+  }
+  if (item.classList[0] === "completeButton") {
+    const newTodoLi = item.parentElement;
+    newTodoLi.classList.toggle("checkedTodo");
   }
 }
 //events
 todoButton.addEventListener("click", addTodo);
-todoList.addEventListener("click", deleteTodo);
+todoList.addEventListener("click", deleteCheckedTodo);

@@ -59,6 +59,7 @@ form button:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  transition: all 0.5s ease;
 }
 /* push both buttons to the end */
 .newTodoDiv li {
@@ -72,7 +73,7 @@ form button:hover {
 .completeButton {
   border: none;
   cursor: pointer;
-  font-size: 1rem;
+  font-size: 1.3rem;
   background: #e47a5d;
   color: white;
   padding: 0.5rem;
@@ -84,4 +85,13 @@ form button:hover {
 .fa-check-square,
 .fa-minus-square {
   pointer-events: none;
+}
+.checkedTodo {
+  text-decoration: line-through;
+  text-decoration-color: rgb(38, 135, 38);
+  opacity: 0.5;
+}
+.fallEffectTodo {
+  transform: translateY(8rem) rotateZ(20deg);
+  opacity: 0;
 }
