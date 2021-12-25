@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 body {
-  background: linear-gradient(120deg, #e1bb3e, #e47a5d);
+  background: linear-gradient(120deg, #f0f2f0, #000c40);
   font-family: "Poppins", sans-serif;
   color: #ffff;
   min-height: 100vh;
@@ -32,14 +32,14 @@ form button {
   background: white;
 }
 form button {
-  color: #e47a5d;
-  background: white;
+  color: #000c40;
+  background: #f0f2f0;
   cursor: pointer;
   transition: all 0.4s ease;
 }
 form button:hover {
-  color: white;
-  background: #e47a5d;
+  color: #f0f2f0;
+  background: #000c40;
 }
 .todoContainer {
   display: flex;
@@ -79,4 +79,9 @@ form button:hover {
 }
 .completeButton {
   background: rgb(38, 135, 38);
+}
+/*disable clicking so delete/completeTodo works */
+.fa-check-square,
+.fa-minus-square {
+  pointer-events: none;
 }

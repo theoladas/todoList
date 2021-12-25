@@ -22,5 +22,13 @@ function addTodo(e) {
   todoList.append(newTodoContainer);
   userInput.value = "";
 }
+function deleteTodo(e) {
+  const item = e.target;
+  if (item.classList[0] === "deleteButton") {
+    const newTodoLi = item.parentElement;
+    newTodoLi.remove();
+  }
+}
 //events
 todoButton.addEventListener("click", addTodo);
+todoList.addEventListener("click", deleteTodo);
