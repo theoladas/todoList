@@ -2,6 +2,7 @@
 const userInput = document.querySelector(".userInput");
 const todoButton = document.querySelector(".todoButton");
 const todoList = document.querySelector(".todoList");
+const filterOption = document.querySelector(".filterTodo");
 //functions
 function addTodo(e) {
   e.preventDefault();
@@ -36,6 +37,31 @@ function deleteCheckedTodo(e) {
     newTodoLi.classList.toggle("checkedTodo");
   }
 }
+function filterTodo(e) {
+  const todos = todoList.childNodes;
+  todos.forEach((todo) => {
+    switch (e.target.value) {
+      case "all":
+        todo.style.display = "flex";
+        break;
+      case "completed":
+        if (todo.classList.contains("checkedTodo")) {
+          todo.style.display = "flex";
+        } else {
+          todo.style.display = "none";
+        }
+        break;
+      case "uncompleted":
+        if (!todo.classList.contains("checkedTodo")) {
+          todo.style.display = "flex";
+        } else {
+          todo.style.display = "none";
+        }
+        break;
+    }
+  });
+}
 //events
 todoButton.addEventListener("click", addTodo);
 todoList.addEventListener("click", deleteCheckedTodo);
+filterOption.addEventListener("change", filterTodo);
