@@ -1,4 +1,4 @@
-A Todo List app with Local storage functionality. 
+classic Todo List app :)
 
 https://theoladas.github.io/todoList/
 
